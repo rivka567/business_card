@@ -1,0 +1,61 @@
+<!--    
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+         
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+            formControlName="name"
+            id="name" 
+            type="text" 
+            class="form-control">
+        <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+            <div *ngIf="f.name.errors.required">Name is required.</div>
+            <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
+        </div>
+    </div>
+   
+    <div class="form-group">
+        <label for="file">File</label>
+        <input 
+            formControlName="file"
+            id="file" 
+            type="file" 
+            class="form-control"
+            multiple="" 
+            (change)="onFileChange($event)">
+        <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+            <div *ngIf="f.file.errors.required">File is required.</div>
+        </div>
+    </div>
+   
+    <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+       
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form> -->
+  
+  <label class="btn btn-default">
+    <input type="file" multiple (change)="selectFiles($event)" />
+  </label>
+  
+  <button
+    class="btn btn-success"
+    [disabled]="!selectedFiles"
+    (click)="uploadFiles()"
+  >
+    Upload
+  </button>
+  
+  <div class="alert alert-light" role="alert">{{ message }}</div>
+  
+  <div class="card">
+    <div class="card-header">List of Files</div>
+    <ul
+      class="list-group list-group-flush"
+      *ngFor="let file of fileInfos | async"
+    >
+      <li class="list-group-item">
+        <a href="{{ file.url }}">{{ file.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
