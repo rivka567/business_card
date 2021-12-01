@@ -1,0 +1,17 @@
+img {
+   height: 250px;
+   left: 40%;
+   position: relative;
+   top: 50%;
+   width:450px;
+}
+
+h5{
+    position: relative;
+    left: 40%;
+}
+
+div.header{
+    osition: relative;
+    left: 10%;
+}

@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-7 mrgnbtm">
+        <h2>Create User</h2>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="exampleInputPassword">password</label>
+                  <input type="text" class="form-control" formControlName="password" id="exampleInputPassword" aria-describedby="emailHelp" placeholder="password">
+                </div>
+                </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputName1">first name</label>
+              <input type="text" class="form-control" formControlName="firstName" id="exampleInputName1" aria-describedby="emailHelp" placeholder="First Name">
+            </div>
+        </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputEmail">email</label>
+              <input type="text" class="form-control" formControlName="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+        </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="exampleInputPhone">phone</label>
+              <input type="text" class="form-control" formControlName="phone" id="exampleInputPhone" aria-describedby="emailHelp" placeholder="Phone">
+            </div>
+          </div>
+        
+          <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger" routerLink="/userLinks">Create</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+ 

@@ -1,0 +1,27 @@
+
+<div class="card">
+  <img src="../../../assets/pic.jpg" alt="userPic" >
+  <div class="container">
+    <h4><b>{{user.firstName}} {{user.lastName}}</b></h4> 
+    <p>Interior Designer</p> 
+    <p>{{user.mail}}</p>
+  </div>
+  <div class="row">
+    <div class="col-3" *ngIf="user.instagramURL">
+  <a href="{{user.instagramURL}}" >instagram</a>
+   </div>
+    <div class="col-3" *ngIf="user.facebookURL">
+  <a href="{{user.facebookURL}}" >facebook</a>
+ </div>
+ <div class="col-3" *ngIf="user.linkedInURL">
+  <a href="{{user.linkedInURL}}" >linkedIn</a>
+ </div>
+ <div class="col-3" *ngIf="user.gitHubURL">
+  <a href="{{user.gitHubURL}}" >gitHub</a>
+  </div>
+</div>
+</div>
+
+
+
+
